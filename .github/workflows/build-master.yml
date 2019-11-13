@@ -21,3 +21,6 @@ jobs:
 
       - name: Build with Gradle
         run: ./gradlew build
+
+      - name: Release Drafter
+        uses: toolmantim/release-drafter@v5.2.0
