@@ -7,9 +7,7 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout latest code
         uses: actions/checkout@v1
@@ -22,5 +20,8 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew build
 
+  release-notes:
+    runs-on: ubuntu-latest
+    steps:
       - name: Release Drafter
         uses: toolmantim/release-drafter@v5.2.0
