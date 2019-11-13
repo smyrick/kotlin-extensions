@@ -46,11 +46,25 @@ publishing {
             from(components["java"])
             artifact(dokkaJar)
         }
+        register<MavenPublication>("jar") {
+            from(components["java"])
+            pom {
+                url.set("https://github.com/smyrick/kotlin-extensions.git")
+            }
+        }
     }
 
     repositories {
         maven {
             url = uri("$buildDir/repository")
+        }
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/smyrick/kotlin-extensions")
+            credentials {
+                username = findProperty("gpr.user") as String? ?: System.getenv("GITHUB_USERNAME")
+                password = findProperty("gpr.key") as String? ?: System.getenv("GITHUB_TOKEN")
+            }
         }
     }
 }
