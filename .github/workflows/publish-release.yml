@@ -31,8 +31,10 @@ jobs:
       - name: Publish artifact
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NEW_VERESION: echo "${GITHUB_REF}" | cut -d "/" -f3
+          # The GITHUB_REF tag comes in the format 'refs/tags/xxx'.
+          # So if we split on '/' and take the 3rd value, we can get the release name.
+          NEW_VERESION: $(echo "${GITHUB_REF}" | cut -d "/" -f3)
         run: |
           echo "New version: ${NEW_VERESION}"
           echo "Github username: ${GITHUB_ACTOR}"
-          ./gradlew -Pversion=${GITHUB_REF} publish
+          ./gradlew -Pversion=${NEW_VERESION} publish
