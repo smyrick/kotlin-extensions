@@ -30,10 +30,11 @@ jobs:
 
       - name: Publish artifact
         run: |
-          echo "Current Ref ${{ secrets.GITHUB_REF }}"
-          echo "Current Actor ${{ secrets.GITHUB_ACTOR }}"
-          ./gradlew -Pversion=${{ secrets.GITHUB_REF }} publish
+          echo "Current Ref ${{ GITHUB_REF }}"
+          echo "Current Actor ${{ GITHUB_ACTOR }}"
+
+          ./gradlew -Pversion=${{ GITHUB_REF }} publish
 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_USERNAME: ${{ secrets.GITHUB_ACTOR }}
+          GITHUB_USERNAME: ${{ GITHUB_ACTOR }}
