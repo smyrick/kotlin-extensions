@@ -31,7 +31,8 @@ jobs:
       - name: Publish artifact
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NEW_VERESION: echo "${GITHUB_REF}" | cut -d "/" -f3
         run: |
-          echo "New version ${GITHUB_REF}"
-          echo "Github username ${GITHUB_ACTOR}"
+          echo "New version: ${NEW_VERESION}"
+          echo "Github username: ${GITHUB_ACTOR}"
           ./gradlew -Pversion=${GITHUB_REF} publish
