@@ -30,7 +30,8 @@ jobs:
 
       - name: Publish artifact
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # The token included by default does not have push access to the package registry
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
         # The GITHUB_REF tag comes in the format 'refs/tags/xxx'.
         # So if we split on '/' and take the 3rd value, we can get the release name.
