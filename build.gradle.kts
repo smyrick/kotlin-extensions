@@ -45,9 +45,6 @@ publishing {
         }
         register<MavenPublication>("gpr") {
             from(components["java"])
-        }
-        register<MavenPublication>("jar") {
-            from(components["java"])
             pom {
                 url.set("https://github.com/smyrick/kotlin-extensions.git")
             }
