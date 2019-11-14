@@ -7,8 +7,6 @@ plugins {
     `maven-publish`
 }
 
-group = "dev.smyrick"
-
 repositories {
     mavenCentral()
 }
@@ -61,8 +59,8 @@ publishing {
             name = "GitHubPackages"
             url = uri("https://maven.pkg.github.com/smyrick/kotlin-extensions")
             credentials {
-                username = findProperty("gpr.user") as String? ?: System.getenv("GITHUB_USERNAME")
-                password = findProperty("gpr.key") as String? ?: System.getenv("GITHUB_TOKEN")
+                username = System.getenv("GITHUB_USERNAME")
+                password = System.getenv("GITHUB_TOKEN")
             }
         }
     }
