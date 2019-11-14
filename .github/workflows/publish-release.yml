@@ -37,4 +37,4 @@ jobs:
         run: |
           echo "New version: ${NEW_VERESION}"
           echo "Github username: ${GITHUB_ACTOR}"
-          ./gradlew -Pversion=${GITHUB_REF} publish
+          ./gradlew -Pversion=${NEW_VERESION} publish
