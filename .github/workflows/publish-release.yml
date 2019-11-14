@@ -29,12 +29,11 @@ jobs:
         run: ./gradlew build
 
       - name: Publish artifact
-        run: |
-          echo "Current Ref ${{ GITHUB_REF }}"
-          echo "Current Actor ${{ GITHUB_ACTOR }}"
-
-          ./gradlew -Pversion=${{ GITHUB_REF }} publish
-
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_USERNAME: ${{ GITHUB_ACTOR }}
+          GITHUB_USERNAME: ${GITHUB_ACTOR}
+          NEW_VERSION: ${GITHUB_REF}
+        run: |
+          echo "New version ${NEW_VERSION}"
+          echo "Github username ${GITHUB_USERNAME}"
+          ./gradlew -Pversion=${NEW_VERSION} publish
