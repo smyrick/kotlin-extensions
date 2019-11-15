@@ -43,12 +43,6 @@ publishing {
             from(components["java"])
             artifact(dokkaJar)
         }
-        register<MavenPublication>("gpr") {
-            from(components["java"])
-            pom {
-                url.set("https://github.com/smyrick/kotlin-extensions.git")
-            }
-        }
     }
 
     repositories {
