@@ -59,6 +59,7 @@ publishing {
             name = "GitHubPackages"
             url = uri("https://maven.pkg.github.com/smyrick/kotlin-extensions")
             credentials {
+                authentication
                 username = findProperty("gpr.user") as? String? ?: System.getenv("GITHUB_ACTOR")
                 password = findProperty("gpr.key") as? String? ?: System.getenv("GITHUB_TOKEN")
             }
