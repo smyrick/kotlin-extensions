@@ -4,11 +4,14 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     kotlin("jvm") version "1.3.50"
     id("org.jetbrains.dokka") version "0.9.17"
+    id("io.gitlab.arturbosch.detekt") version "1.1.1"
+    id("org.jmailen.kotlinter") version "2.1.2"
     `maven-publish`
 }
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 dependencies {
@@ -35,6 +38,12 @@ val dokkaJar by tasks.creating(Jar::class) {
     description = "Assembles Kotlin docs with Dokka"
     classifier = "javadoc"
     from(tasks.dokka)
+}
+
+tasks.detekt {
+    detekt {
+        input = files("src/*/kotlin")
+    }
 }
 
 publishing {
