@@ -1,5 +1,5 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import org.gradle.jvm.tasks.Jar
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     kotlin("jvm") version "1.3.50"
@@ -53,15 +53,11 @@ publishing {
 
     repositories {
         maven {
-            url = uri("$buildDir/repository")
-        }
-        maven {
             name = "GitHubPackages"
             url = uri("https://maven.pkg.github.com/smyrick/kotlin-extensions")
             credentials {
-                authentication
-                username = findProperty("gpr.user") as? String? ?: System.getenv("GITHUB_ACTOR")
-                password = findProperty("gpr.key") as? String? ?: System.getenv("GITHUB_TOKEN")
+                username = System.getenv("GITHUB_ACTOR")
+                password = System.getenv("GITHUB_TOKEN")
             }
         }
     }
