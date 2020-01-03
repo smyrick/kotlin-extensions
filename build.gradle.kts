@@ -2,10 +2,10 @@ import org.gradle.jvm.tasks.Jar
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.3.50"
-    id("org.jetbrains.dokka") version "0.9.17"
-    id("io.gitlab.arturbosch.detekt") version "1.1.1"
-    id("org.jmailen.kotlinter") version "2.1.2"
+    kotlin("jvm") version "1.3.60"
+    id("org.jetbrains.dokka") version "0.10.0"
+    id("io.gitlab.arturbosch.detekt") version "1.3.1"
+    id("org.jmailen.kotlinter") version "2.2.0"
     `maven-publish`
 }
 
