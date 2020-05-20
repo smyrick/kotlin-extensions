@@ -3,7 +3,7 @@ package dev.smyrick.kotlin.bool
 /**
  * Converts a nullable Boolean into non-null
  *
- * ### Example
+ * ### Example ffsd
  * ```kotlin
  * val trueBool: Boolean? = true
  * val falseBool: Boolean? = false
