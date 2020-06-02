@@ -35,7 +35,7 @@ This project is currently maintained soley by [@smyrick](https://github.com/smyr
 
 If you need to raise an issue or question about this library, please create an issue here and tag it with the appropiate label.
 
-If you need to contact me direc, please see my contact details on my profile page.
+If you need to contact me directly, please see my contact details on my profile page.
 
 ## ✏️ Contributing
 
