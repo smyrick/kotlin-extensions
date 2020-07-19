@@ -2,10 +2,10 @@ import org.gradle.jvm.tasks.Jar
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.3.60"
-    id("org.jetbrains.dokka") version "0.10.0"
-    id("io.gitlab.arturbosch.detekt") version "1.3.1"
-    id("org.jmailen.kotlinter") version "2.2.0"
+    kotlin("jvm") version "1.3.72"
+    id("org.jetbrains.dokka") version "0.10.1"
+    id("io.gitlab.arturbosch.detekt") version "1.9.1"
+    id("org.jmailen.kotlinter") version "2.4.1"
     `maven-publish`
 }
 
@@ -16,8 +16,8 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.5.2")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.5.2")
+    testImplementation("org.junit.jupiter", "junit-jupiter-api", "5.6.2")
+    testRuntimeOnly("org.junit.jupiter", "junit-jupiter-engine", "5.6.2")
 }
 
 tasks.withType<KotlinCompile> {
