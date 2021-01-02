@@ -4,8 +4,8 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     kotlin("jvm") version "1.4.21"
     id("org.jetbrains.dokka") version "1.4.20"
-    id("io.gitlab.arturbosch.detekt") version "1.14.2"
-    id("org.jmailen.kotlinter") version "2.4.1"
+    id("io.gitlab.arturbosch.detekt") version "1.15.0"
+    id("org.jmailen.kotlinter") version "3.3.0"
     `maven-publish`
 }
 
