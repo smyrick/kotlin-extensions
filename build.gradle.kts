@@ -28,9 +28,8 @@ tasks.named<Test>("test") {
     useJUnitPlatform()
 }
 
-tasks.dokka {
-    outputFormat = "html"
-    outputDirectory = "$buildDir/javadoc"
+tasks.withType<DokkaTask>().configureEach {
+    outputDirectory.set(buildDir.resolve("javadoc"))
 }
 
 val dokkaJar by tasks.creating(Jar::class) {
