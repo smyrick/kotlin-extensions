@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     kotlin("jvm") version "1.5.0"
-    id("org.jetbrains.dokka") version "0.10.1"
+    id("org.jetbrains.dokka") version "1.4.32"
     id("io.gitlab.arturbosch.detekt") version "1.16.0"
     id("org.jmailen.kotlinter") version "3.4.0"
     `maven-publish`
