@@ -2,7 +2,7 @@ import org.gradle.jvm.tasks.Jar
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.5.10"
+    kotlin("jvm") version "1.5.20"
     id("org.jetbrains.dokka") version "0.10.1"
     id("io.gitlab.arturbosch.detekt") version "1.16.0"
     id("org.jmailen.kotlinter") version "3.4.0"
